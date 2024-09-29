@@ -1,16 +1,29 @@
 ---
-
+const pageTitle = "Thumnbail downloader!";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <h1>{pageTitle}</h1>
+    <h2>Get the thumbnail fron any YouTube video in 3 steps:</h2>
+    <ul>
+      <li>Copy the video's URL</li>
+      <li>Paste it below!</li>
+      <li>Click the "Get thumbnail" button.</li>
+    </ul>
+    That's it, just save the image to your PC or copy the path and use it wherever
+    you want.
+
+    <div>
+      <input type="text" placeholder="Paste the YouTube URL here!" />
+      <button>Get thumbnail</button>
+    </div>
+  </body>
 </html>
