@@ -22,8 +22,15 @@ const pageTitle = "Thumnbail downloader!";
     you want.
 
     <div>
-      <input type="text" placeholder="Paste the YouTube URL here!" />
-      <button>Get thumbnail</button>
+      <input
+        type="url"
+        id="video-url"
+        placeholder="Paste the YouTube URL here!"
+      />
+      <button id="get-thumbnail-btn">Get thumbnail</button>
     </div>
   </body>
+  <script>
+    import "../scripts/downloader";
+  </script>
 </html>
