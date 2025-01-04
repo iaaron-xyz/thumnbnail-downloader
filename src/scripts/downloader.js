@@ -3,7 +3,7 @@ const getThumbnailBtn = document.getElementById("get-thumbnail-btn");
 
 // Main Event listener on click
 getThumbnailBtn.addEventListener("click", () => {
-  const videoUrl = document.getElementById("video-url");
+  const videoUrl = document.getElementById("input-video-url");
   const thumbnailUrl = generateThumbnailUrl(videoUrl.value);
   console.log(thumbnailUrl);
   addThumnailInfo(thumbnailUrl);

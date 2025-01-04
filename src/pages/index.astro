@@ -11,37 +11,166 @@ const pageTitle = "Thumnbail downloader!";
     <title>{pageTitle}</title>
   </head>
   <body>
-    <!-- Title and text -->
-    <h1>{pageTitle}</h1>
-    <h2>Get the thumbnail fron any YouTube video in 3 steps:</h2>
-    <ul>
-      <li>Copy the video's URL</li>
-      <li>Paste it below!</li>
-      <li>Click the "Get thumbnail" button.</li>
-    </ul>
-    <p>That's it, just save the image to your PC or copy the path.</p>
+    <div class="top-text">
+      <!-- Title and text -->
+      <h1 class="title">{pageTitle}</h1>
+      <h2>Get the thumbnail from any YouTube video in 3 steps:</h2>
+      <ul>
+        <li>Copy the video's URL</li>
+        <li>Paste it below!</li>
+        <li>Click the "Get thumbnail" button.</li>
+      </ul>
+      <p>
+        That's it, just save the image to your PC or copy the path to your
+        cpliboard.
+      </p>
+    </div>
 
     <!-- Input url -->
-    <div>
+    <div class="input-fields">
       <input
         type="url"
-        id="video-url"
+        id="input-video-url"
+        class="input-field"
         placeholder="Paste the YouTube URL here!"
       />
-      <button id="get-thumbnail-btn">Get thumbnail</button>
+      <button id="get-thumbnail-btn" class="input-field">Get thumbnail</button>
     </div>
 
     <!-- Return thumbnail info -->
-    <div id="thumbnail-info" class="hidden">
+    <div id="thumbnail-info" class="output-fields hidden">
       <div>
-        <input type="text" name="" id="thumbnail-url" />
-        <button>Copy url</button>
-        <a id="thumbnail-link" target="_blank">Open in a new window</a>
+        <input type="text" class="output-element" id="thumbnail-url" />
+        <button class="output-element" id="copy-url-btn">Copy url</button>
+        <a id="thumbnail-link" target="_blank" class="output-element">
+          &#129109;</a
+        >
       </div>
-      <img src="" alt="" id="thumbnail-img" />
+      <img src="" alt="thumbnail image" id="thumbnail-img" />
     </div>
+
+    <footer>
+      made by <a href="https://github.com/iaaron-xyz">iaaron.xyz</a>
+    </footer>
   </body>
   <style>
+    * {
+      border: 1px solid red;
+      box-sizing: border-box;
+    }
+    html,
+    body {
+      /* background: linear-gradient(-45deg, #161616, #2e0000);
+      background-size: 300% 300%;
+      animation: gradient 8s ease infinite; */
+      background: rgb(22, 22, 22);
+      min-height: 100vh;
+      color: rgb(243, 243, 243);
+      border: 0;
+      margin: 0;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    button {
+      background: crimson;
+      color: white;
+    }
+    a {
+      color: crimson;
+    }
+
+    .top-text {
+      margin-bottom: 3rem;
+    }
+    .title {
+      text-align: center;
+      margin-top: 4rem;
+      margin-bottom: 4rem;
+    }
+
+    .input-fields {
+      width: 70%;
+      display: flex;
+      justify-content: center;
+    }
+    .input-field {
+      height: 2rem;
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+    #input-video-url {
+      width: 80%;
+      padding: 0 10px;
+      border-top-left-radius: 7px;
+      border-bottom-left-radius: 7px;
+    }
+    #get-thumbnail-btn,
+    #copy-url-btn {
+      padding-left: 7px;
+      padding-right: 7px;
+      border-top-right-radius: 7px;
+      border-bottom-right-radius: 7px;
+    }
+
+    .output-fields {
+      min-width: 50%;
+      margin-top: 4rem;
+    }
+    .output-fields > div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+    .output-element {
+      height: 2rem;
+      border: 0;
+    }
+    #thumbnail-url {
+      width: 50%;
+      border-top-left-radius: 7px;
+      border-bottom-left-radius: 7px;
+      padding: 0 10px;
+    }
+    #copy-url-btn {
+      background: rgb(48, 48, 48);
+      color: white;
+    }
+    #thumbnail-link {
+      width: 2rem;
+      text-align: center;
+      margin-left: 0.2rem;
+      border-radius: 7px;
+      background: rgb(48, 48, 48);
+      color: white;
+    }
+    #thumbnail-img {
+      border: white 7px solid;
+      border-radius: 7px;
+    }
+
+    footer {
+      margin-top: 4rem;
+      margin-bottom: 2rem;
+      color: white;
+    }
+
+    /* @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    } */
     .hidden {
       display: none;
     }
