@@ -6,6 +6,7 @@ getThumbnailBtn.addEventListener("click", () => {
   const videoUrl = document.getElementById("input-video-url");
   const thumbnailUrl = generateThumbnailUrl(videoUrl.value);
   if (thumbnailUrl === undefined) {
+    videoUrl.value = "";
     return;
   } else {
     addThumnailInfo(thumbnailUrl);
