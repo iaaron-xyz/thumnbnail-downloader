@@ -5,9 +5,12 @@ const getThumbnailBtn = document.getElementById("get-thumbnail-btn");
 getThumbnailBtn.addEventListener("click", () => {
   const videoUrl = document.getElementById("input-video-url");
   const thumbnailUrl = generateThumbnailUrl(videoUrl.value);
-  console.log(thumbnailUrl);
-  addThumnailInfo(thumbnailUrl);
-  showThumnailInfo();
+  if (thumbnailUrl === undefined) {
+    return;
+  } else {
+    addThumnailInfo(thumbnailUrl);
+    showThumnailInfo();
+  }
 });
 
 // Extract the video id
