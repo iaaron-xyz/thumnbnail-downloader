@@ -11,6 +11,7 @@ const pageTitle = "Thumnbail downloader!";
     <title>{pageTitle}</title>
   </head>
   <body>
+    <!-- Title and text -->
     <h1>{pageTitle}</h1>
     <h2>Get the thumbnail fron any YouTube video in 3 steps:</h2>
     <ul>
@@ -18,9 +19,9 @@ const pageTitle = "Thumnbail downloader!";
       <li>Paste it below!</li>
       <li>Click the "Get thumbnail" button.</li>
     </ul>
-    That's it, just save the image to your PC or copy the path and use it wherever
-    you want.
+    <p>That's it, just save the image to your PC or copy the path.</p>
 
+    <!-- Input url -->
     <div>
       <input
         type="url"
@@ -29,7 +30,22 @@ const pageTitle = "Thumnbail downloader!";
       />
       <button id="get-thumbnail-btn">Get thumbnail</button>
     </div>
+
+    <!-- Return thumbnail info -->
+    <div id="thumbnail-info" class="hidden">
+      <div>
+        <input type="text" name="" id="thumbnail-url" />
+        <button>Copy url</button>
+        <a id="thumbnail-link" target="_blank">Open in a new window</a>
+      </div>
+      <img src="" alt="" id="thumbnail-img" />
+    </div>
   </body>
+  <style>
+    .hidden {
+      display: none;
+    }
+  </style>
   <script>
     import "../scripts/downloader";
   </script>

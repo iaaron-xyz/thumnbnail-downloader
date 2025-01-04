@@ -1,12 +1,13 @@
 // Get the button element
 const getThumbnailBtn = document.getElementById("get-thumbnail-btn");
 
-// Event listener on click
+// Main Event listener on click
 getThumbnailBtn.addEventListener("click", () => {
   const videoUrl = document.getElementById("video-url");
-  //   console.log(`Getting thumbnail from: ${videoUrl.value}`);
   const thumbnailUrl = generateThumbnailUrl(videoUrl.value);
   console.log(thumbnailUrl);
+  addThumnailInfo(thumbnailUrl);
+  showThumnailInfo();
 });
 
 // Extract the video id
@@ -14,6 +15,7 @@ function extractVideoId(url) {
   const urlParams = new URL(url).searchParams;
   return urlParams.get("v");
 }
+
 // Generate the thumbnail url
 function generateThumbnailUrl(url) {
   try {
@@ -26,4 +28,18 @@ function generateThumbnailUrl(url) {
   } catch (error) {
     alert("Please enter a valid YouTube URL");
   }
+}
+
+function addThumnailInfo(url) {
+  const thumbnailUrl = document.getElementById("thumbnail-url");
+  const thumbnailImg = document.getElementById("thumbnail-img");
+  const thumbnailLink = document.getElementById("thumbnail-link");
+  thumbnailUrl.value = url;
+  thumbnailLink.href = url;
+  thumbnailImg.src = url;
+}
+
+function showThumnailInfo() {
+  const thumbnailInfoDiv = document.getElementById("thumbnail-info");
+  thumbnailInfoDiv.classList.remove("hidden");
 }
